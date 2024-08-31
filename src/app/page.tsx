@@ -1,8 +1,10 @@
+import { FilterArea } from "@/components/Home/FilterArea";
 
-export default function Home() {
+export default async function Home() {
   return (
-    <>
-      <h1>Welcome to Capputeeno!</h1>
-    </>
+    <main className="px-40 py-8 ">
+      <FilterArea />
+
+    </main>
   );
 }

@@ -20,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-ao">
-      <body className={`${saira.className} bg-[#F0F0F5]`}>
+      <body className={`${saira.className} bg-primary text-primary`}>
         <Header />
         {children}
       </body>
