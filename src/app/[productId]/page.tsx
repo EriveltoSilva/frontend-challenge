@@ -1,19 +1,16 @@
-import { BackwardIcon } from "@/assets/icons/BackwardIcon";
 import { ShoppingIcon } from "@/assets/icons/ShoppingIcon";
 import caneca from "@/assets/images/1.png";
+import { Button } from "@/components/Buttons/Button";
+import { ButtonGoBack } from "@/components/Buttons/ButtonGoBack";
 import Image from "next/image";
-import Link from "next/link";
 
 
-export default async function ProductDetail({ params }) {
+export default async function ProductDetail({ }) {
 
     return (
         <main className="px-40 py-6">
             <div className="space-y-6 w-full">
-                <Link href={"/"} className="flex gap-0.5">
-                    <BackwardIcon />
-                    <span className="font-medium text-sm text-[#617480]">Voltar</span>
-                </Link>
+                <ButtonGoBack link="/" />
 
                 <div className="grid grid-cols-2 gap-8">
                     <div className="w-full">
@@ -40,11 +37,12 @@ export default async function ProductDetail({ params }) {
                                     <h3 className="font-medium text-base text-primary">Descrição</h3>
                                     <p className="font-normal text-sm text-primary-dark">Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.</p>
                                 </div>
-
-                                <button className="bg-brand-blue text-white flex gap-3 justify-center items-center rounded-lg uppercase w-full py-2.5">
-                                    <ShoppingIcon fill="#fff" />
+                                <Button
+                                    className="uppercase"
+                                >
                                     <span>Adicionar ao Carrinho</span>
-                                </button>
+                                    <ShoppingIcon fill="#fff" />
+                                </Button>
                             </div>
                         </div>
                     </section>
