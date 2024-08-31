@@ -18,7 +18,9 @@ const config: Config = {
       },
       colors:{
         "primary": "#737380",
-      }
+        "custom-orange":"#FFA585"
+      },
+
 
     },
   },

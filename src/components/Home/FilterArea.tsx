@@ -18,3 +18,6 @@ export const FilterArea = (props: Props) => {
     </div>
   );
 };
+
+
+// Por enquanto sim
