@@ -7,7 +7,7 @@ type Props = {}
 
 export const Resume = (props: Props) => {
     return (
-        <aside className="bg-white max-w-[352px] rounded-lg py-4 px-6">
+        <aside className="bg-white min-w-[352px] max-h-[700px] rounded-lg py-4 px-6">
             <div className="space-y-80">
                 <div className="space-y-7">
                     <h3 className="font-semibold text-xl text-primary-dark uppercase">Resumo</h3>

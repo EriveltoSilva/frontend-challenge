@@ -7,5 +7,53 @@
   padding: 0;
   min-width: 0;
   box-sizing: border-box;
+  scroll-behavior:smooth;
 }
 
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+  
+.no-scrollbar {
+    -ms-overflow-style: none;
+    /* Internet Explorer 10+ */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.truncate-lines-3 {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+}
+
+.truncate-lines-4 {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    overflow: hidden;
+}
+
+.truncate-lines-5 {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;
+    overflow: hidden;
+}
+
+  
+
+
+.custom-number-input::-webkit-outer-spin-button,
+.custom-number-input::-webkit-inner-spin-button {
+    border-color: #A8A8B3;
+}
+
+.custom-number-input::-webkit-inner-spin-button {
+    background-color: #F3f5F6;
+}
+
+.custom-number-input[type="number"]::-moz-focus-outer {
+    border-color: #A8A8B3;
+}

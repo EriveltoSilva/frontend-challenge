@@ -11,6 +11,7 @@ const saira = Saira({
 export const metadata: Metadata = {
   title: "Capputeeno",
   description: "Capputeeno a e-commerce for selling mugs and t-shirts",
+  icons: "/logo.png",
 };
 
 export default function RootLayout({
