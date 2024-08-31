@@ -10,7 +10,7 @@ interface ProductListProps {
 export const ProductList: React.FC<ProductListProps> = ({ products }) => {
     return (
         <>
-            <div className="grid grid-cols-4 gap-4">
+            <section className="grid grid-cols-4 gap-4">
                 {products.map((product) => {
                     const image = require(`@/assets/images/${product.id}.png`);
                     return (
@@ -23,7 +23,7 @@ export const ProductList: React.FC<ProductListProps> = ({ products }) => {
                         />
                     );
                 })}
-            </div>
+            </section>
         </>
     );
 };

@@ -23,9 +23,12 @@ export default async function Home() {
       <div className="space-y-6 w-full">
         <FilterArea />
         <Paginator currentPage={1} totalPages={6} />
-        {/* Lista de produtos */}
-        <ProductList products={products} />
-        <Paginator currentPage={1} totalPages={6} />
+
+        <div className="space-y-44">
+          {/* Lista de produtos */}
+          <ProductList products={products} />
+          <Paginator currentPage={1} totalPages={6} />
+        </div>
       </div>
     </main>
   );
