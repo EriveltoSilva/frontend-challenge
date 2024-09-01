@@ -11,18 +11,16 @@ export const ProductList: React.FC<ProductListProps> = ({ products }) => {
     return (
         <>
             <section className="grid grid-cols-4 gap-4">
-                {products.map((product) => {
-                    // const image = require(`@/assets/images/${product.id}.png`);
-                    return (
-                        <ProductItem
-                            key={product.id}
-                            id={product.id}
-                            title={product.title}
-                            price={product.price}
-                            image={product.image}
-                        />
-                    );
-                })}
+                {products.map((product) => (
+                    <ProductItem
+                        key={product.id}
+                        id={product.id}
+                        name={product.name}
+                        price_in_cents={product.price_in_cents}
+                        image_url={product.image_url}
+                    />
+                )
+                )}
             </section>
         </>
     );

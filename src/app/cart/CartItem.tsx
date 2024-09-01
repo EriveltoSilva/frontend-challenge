@@ -26,7 +26,9 @@ export const CartItem: React.FC<ProductItemProps> = ({ id, title, description, i
                                 <TrashIcon />
                             </Button>
                         </div>
-                        <p className='font-normal text-xs text-primary-dark truncate-lines-4'>{description}</p>
+                        <p className='font-normal text-xs text-primary-dark truncate-lines-4'>
+                            {description}
+                        </p>
                     </div>
 
                     <div className='flex justify-between items-center'>
@@ -35,7 +37,6 @@ export const CartItem: React.FC<ProductItemProps> = ({ id, title, description, i
                                 type='number'
                                 className='w-12 bg-transparent text-primary outline-none text-center border-none custom-number-input'
                                 placeholder="1"
-
                                 min="1"
                                 style={{ MozAppearance: 'textfield' }}
                             />
