@@ -15,7 +15,8 @@ export const CartItem: React.FC<ProductItemProps> = ({ id, title, description, i
 
     return (
         <article className="flex rounded-lg max-h-56">
-            <Image src={image} alt={`Imagem de ${title}`} className='rounded-s-lg object-cover' />
+            <Image src={image} alt={`Imagem de ${title}`} className='rounded-s-lg object-cover w-auto h-auto' width={0} height={0} sizes="100vw" />
+            {/* width="0" height="0" sizes="100vw" className="w-full h-auto" */}
             <div className='flex-1 py-4 px-8 bg-white rounded-r-lg'>
                 <div className="space-y-6">
                     <div className="space-y-3">

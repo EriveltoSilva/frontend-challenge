@@ -12,14 +12,14 @@ export const ProductList: React.FC<ProductListProps> = ({ products }) => {
         <>
             <section className="grid grid-cols-4 gap-4">
                 {products.map((product) => {
-                    const image = require(`@/assets/images/${product.id}.png`);
+                    // const image = require(`@/assets/images/${product.id}.png`);
                     return (
                         <ProductItem
                             key={product.id}
                             id={product.id}
                             title={product.title}
                             price={product.price}
-                            image={image}
+                            image={product.image}
                         />
                     );
                 })}
