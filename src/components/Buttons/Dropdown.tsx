@@ -8,9 +8,10 @@ interface DropdownProps {
     title: string;
     options: string[];
     className?: string;
+    handleDropdownSelection: (selection: string) => void;
 }
 
-export const Dropdown: React.FC<DropdownProps> = ({ title, options, className }) => {
+export const Dropdown: React.FC<DropdownProps> = ({ title, options, className, handleDropdownSelection }) => {
     const [isOpen, setIsOpen] = useState(false);
     const dropdownRef = useRef<HTMLDivElement>(null);
 
@@ -47,11 +48,16 @@ export const Dropdown: React.FC<DropdownProps> = ({ title, options, className })
             </button>
 
             {isOpen && (
-                <ul
-                    className="bg-white text-primary flex flex-col gap-1 rounded-lg shadow-lg px-4 py-3 absolute right-0 top-full mt-2 w-48"
-                >
+                <ul className="bg-white text-primary flex flex-col gap-1 rounded-lg shadow-lg px-4 py-3 absolute right-0 top-full mt-2 w-48">
                     {options.map((option, index) => (
-                        <li key={index}>{option}</li>
+                        <li key={index}
+                            className="cursor-pointer hover:bg-slate-200"
+                            onClick={() => {
+                                handleDropdownSelection(option);
+                                toggleDropdown();
+                            }} >
+                            {option}
+                        </li>
                     ))}
                 </ul>
             )}

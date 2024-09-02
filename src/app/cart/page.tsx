@@ -1,7 +1,7 @@
 import { getProducts } from "@/actions/productActions";
 import { ButtonGoBack } from "@/components/Buttons/ButtonGoBack";
 import { Resume } from "@/components/Cart/Resume";
-import { Product } from "@/types/product";
+import { Product } from "@/types/product-types";
 import { CartItem } from './CartItem';
 
 

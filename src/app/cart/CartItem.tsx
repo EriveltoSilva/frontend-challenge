@@ -1,6 +1,6 @@
 import { TrashIcon } from "@/assets/icons/TrashIcon";
 import { Button } from "@/components/Buttons/Button";
-import { Product } from "@/types/product";
+import { Product } from "@/types/product-types";
 import { formatToReais } from "@/utils/formaterCurrency";
 import Image from "next/image";
 import React from "react";

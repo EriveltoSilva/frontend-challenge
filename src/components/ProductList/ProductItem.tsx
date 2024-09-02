@@ -9,12 +9,12 @@ interface ProductItemProps {
     name: string;
     price_in_cents: number;
     image_url: StaticImageData | string;
-    category?: string;
-    created_at?: string;
-    sales?: number;
+    category: string;
+    created_at: string;
+    sales: number;
 }
 
-export const ProductItem: React.FC<ProductItemProps> = ({ id, name, price_in_cents, image_url }) => {
+export const ProductItem: React.FC<ProductItemProps> = ({ id, name, price_in_cents, image_url, sales }) => {
     return (
         <article className="bg-[rgba(255,255,255,.4)] rounded-lg">
             <Link href={`/${id}`}>
@@ -25,7 +25,10 @@ export const ProductItem: React.FC<ProductItemProps> = ({ id, name, price_in_cen
                     <h3 className="text-primary-dark text-base font-light">{name}</h3>
                 </Link>
                 <Divider />
-                <span className="text-lg font-semibold text-[#09090A]">{formatToReais(price_in_cents)}</span>
+                <div className="flex items-center justify-between">
+                    <span className="text-lg font-semibold text-[#09090A]">{formatToReais(price_in_cents)}</span>
+                    <span title="Quant. Vendidas" className="text-sm text-white bg-red-600 p-0.5 rounded-lg">{sales}</span>
+                </div>
             </div> *
         </article>
     );
