@@ -28,8 +28,8 @@ export const FilterBar = ({ currentFilter, currentPriority }: FilterAreaProps) =
     }
 
     return (
-        <div className="flex justify-between items-center">
-            <ul className="flex gap-10 text-base text-[#737380] uppercase ">
+        <div className="flex justify-between lg:gap-0 gap-4 items-center">
+            <ul className="flex items-center flex-grow gap-6 lg:gap-10 text-xs lg:text-base text-[#737380] uppercase">
                 <FilterItem
                     text="Todos os produtos"
                     selected={currentFilter == FilterType.ALL}

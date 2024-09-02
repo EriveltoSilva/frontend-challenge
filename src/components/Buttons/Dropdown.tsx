@@ -40,7 +40,7 @@ export const Dropdown: React.FC<DropdownProps> = ({ title, options, className, h
     return (
         <div className="relative" ref={dropdownRef}>
             <button
-                className={twMerge("bg-transparent rounded-md px-4 py-2 text-sm flex gap-2 items-center", className)}
+                className={twMerge("bg-transparent rounded-md px-0.5 py-0.5 lg:px-4 lg:py-2 text-xs lg:text-base flex gap-2 items-center", className)}
                 onClick={toggleDropdown}
             >
                 {title}

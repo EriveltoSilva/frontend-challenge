@@ -22,7 +22,7 @@ export default async function Home({ searchParams }: HomeProps) {
   const products = await getFilteredProducts(filterType, priorityType, search);
 
   return (
-    <main className="px-40 py-8">
+    <main className="lg:px-40 lg:py-8 px-6 py-3">
       <div className="space-y-6 w-full">
         <FilterBar currentFilter={filterType} currentPriority={priorityType} />
         <Paginator currentPage={1} totalPages={6} />
