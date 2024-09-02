@@ -1,7 +1,7 @@
 import { TrashIcon } from "@/assets/icons/TrashIcon";
 import { Button } from "@/components/Buttons/Button";
 import { Product } from "@/types/product-types";
-import { formatToReais } from "@/utils/formaterCurrency";
+import { formatCurrency } from "@/utils/formaterCurrency";
 import Image from "next/image";
 import React from "react";
 
@@ -37,7 +37,7 @@ export const CartItem: React.FC<Product> = ({ id, name, description, image_url, 
                             />
                         </div>
                         <span className='font-semibold text-base text-primary-black'>
-                            {formatToReais(price_in_cents)}
+                            {formatCurrency(price_in_cents)}
                         </span>
                     </div>
                 </div>

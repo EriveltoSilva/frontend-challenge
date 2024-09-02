@@ -1,9 +1,20 @@
-export const formatToReais = (cents: number):string => {
-    const value = cents / 100;
-    return value.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+export enum TypeCurrency {
+    BRL = 'BRL',
+    AOA = 'AOA'
 }
 
-export const formatarToKwanza = (cents: number): string => {
-    const value = cents / 100;
-    return value.toLocaleString('pt-AO', { style: 'currency', currency: 'AOA' });
-  }
+const currencyDetails = {
+    BRL: {
+        locale: 'pt-BR',
+        currency: 'BRL'
+    },
+    AOA: {
+        locale: 'pt-AO',
+        currency: 'AOA'
+    }
+}
+
+export const formatCurrency = (value: number, typeCurrency: TypeCurrency): string => {
+    const { locale, currency } = currencyDetails[typeCurrency];
+    return value.toLocaleString(locale, { style: 'currency', currency });
+}

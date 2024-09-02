@@ -16,3 +16,26 @@ export const getFilteredProducts = async (filterType: FilterType, priority:Prior
         throw error;
     }
 }
+
+export const getProductById = async (id:string):Promise<Product> => {
+    try {
+        const data = await axios.post(API_URL, { 
+            query: `
+            {
+                Product(id: "${id}") {
+                    id
+                    name
+                    description
+                    price_in_cents
+                    image_url
+                    sales
+                    created_at
+                    category
+                }
+            }` 
+        });
+        return data?.data?.data?.Product;
+    } catch (error) {
+        throw error;
+    }
+}

@@ -1,11 +1,20 @@
-import { ShoppingIcon } from "@/assets/icons/ShoppingIcon";
-import caneca from "@/assets/images/1.png";
-import { Button } from "@/components/Buttons/Button";
+import { getProductById } from "@/actions/productActions";
 import { ButtonGoBack } from "@/components/Buttons/ButtonGoBack";
+import { formatCurrency, TypeCurrency } from "@/utils/formaterCurrency";
+import { categoryTranslations } from "@/utils/translate";
 import Image from "next/image";
+import { AddCartSection } from "./AddCartSection";
 
+interface ProductDetailProps {
+    params: {
+        productId: string;
+    }
+}
 
-export default async function ProductDetail({ }) {
+export default async function ProductDetail({ params }: ProductDetailProps) {
+    const productId = params.productId;
+
+    const product = await getProductById(productId);
 
     return (
         <main className="px-40 py-6">
@@ -14,35 +23,33 @@ export default async function ProductDetail({ }) {
 
                 <div className="grid grid-cols-2 gap-8">
                     <div className="w-full">
-                        <Image src={caneca} alt="Imagem" className="w-full h-full object-cover rounded-lg" />
+                        <Image src={product.image_url} alt="Imagem" className="w-full h-full object-cover rounded-lg" width={0} height={0} sizes="100vw" />
                     </div>
 
                     <section>
                         <div className="space-y-14">
                             <div>
                                 <h2 className="font-normal text-base text-primary-dark">
-                                    Caneca
+                                    {categoryTranslations[product.category]}
                                 </h2>
                                 <h1 className="mt-3 font-light text-[32px] text-primary-dark">
-                                    Caneca de cerâmica rústica
+                                    {product.name}
                                 </h1>
-                                <span className="mt-1 text-xl font-semibold text-black">R$ 40.00</span>
+                                <span className="mt-1 text-xl font-semibold text-black">{formatCurrency(product.price_in_cents, TypeCurrency.AOA)}</span>
                                 <p className="mt-3 text-xs text-gray-600">
-                                    *Frete de R$40,00 para todo o Brasil. Grátis para compras acima de R$900,00.
+                                    *Frete de 1.000KZ por toda Angola. Grátis para compras acima de 100.000KZ.
                                 </p>
                             </div>
 
                             <div className="space-y-52">
                                 <div className="space-y-2">
                                     <h3 className="font-medium text-base text-primary">Descrição</h3>
-                                    <p className="font-normal text-sm text-primary-dark">Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.</p>
+                                    <p className="font-normal text-sm text-primary-dark">
+                                        {product.description}
+                                    </p>
                                 </div>
-                                <Button
-                                    className="uppercase"
-                                >
-                                    <span>Adicionar ao Carrinho</span>
-                                    <ShoppingIcon fill="#fff" />
-                                </Button>
+
+                                <AddCartSection product={product} />
                             </div>
                         </div>
                     </section>
@@ -51,3 +58,4 @@ export default async function ProductDetail({ }) {
         </main>
     );
 }
+

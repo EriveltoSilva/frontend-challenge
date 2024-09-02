@@ -1,4 +1,4 @@
-import { formatToReais } from "@/utils/formaterCurrency";
+import { formatCurrency, TypeCurrency } from "@/utils/formaterCurrency";
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 import { Divider } from "../Diveder";
@@ -26,7 +26,7 @@ export const ProductItem: React.FC<ProductItemProps> = ({ id, name, price_in_cen
                 </Link>
                 <Divider />
                 <div className="flex items-center justify-between">
-                    <span className="text-lg font-semibold text-[#09090A]">{formatToReais(price_in_cents)}</span>
+                    <span className="text-lg font-semibold text-[#09090A]">{formatCurrency(price_in_cents, TypeCurrency.AOA)}</span>
                     <span title="Quant. Vendidas" className="text-sm text-white bg-red-600 p-0.5 rounded-lg">{sales}</span>
                 </div>
             </div> *
