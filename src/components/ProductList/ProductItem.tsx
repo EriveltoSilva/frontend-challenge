@@ -1,3 +1,4 @@
+import { formatToReais } from "@/utils/formaterCurrency";
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 import { Divider } from "../Diveder";
@@ -8,6 +9,9 @@ interface ProductItemProps {
     name: string;
     price_in_cents: number;
     image_url: StaticImageData | string;
+    category?: string;
+    created_at?: string;
+    sales?: number;
 }
 
 export const ProductItem: React.FC<ProductItemProps> = ({ id, name, price_in_cents, image_url }) => {
@@ -21,7 +25,7 @@ export const ProductItem: React.FC<ProductItemProps> = ({ id, name, price_in_cen
                     <h3 className="text-primary-dark text-base font-light">{name}</h3>
                 </Link>
                 <Divider />
-                <span className="text-lg font-semibold text-[#09090A]">R$ {price_in_cents}</span>
+                <span className="text-lg font-semibold text-[#09090A]">{formatToReais(price_in_cents)}</span>
             </div> *
         </article>
     );

@@ -1,27 +1,22 @@
 import { TrashIcon } from "@/assets/icons/TrashIcon";
 import { Button } from "@/components/Buttons/Button";
-import Image, { StaticImageData } from "next/image";
+import { Product } from "@/types/product";
+import { formatToReais } from "@/utils/formaterCurrency";
+import Image from "next/image";
 import React from "react";
 
-interface ProductItemProps {
-    id: number;
-    title: string;
-    description: string;
-    image: StaticImageData;
-    price: number;
-}
 
-export const CartItem: React.FC<ProductItemProps> = ({ id, title, description, image, price }) => {
+export const CartItem: React.FC<Product> = ({ id, name, description, image_url, price_in_cents }) => {
 
     return (
         <article className="flex rounded-lg max-h-56">
-            <Image src={image} alt={`Imagem de ${title}`} className='rounded-s-lg object-cover w-auto h-auto' width={0} height={0} sizes="100vw" />
+            <Image src={image_url} alt={`Imagem de ${name}`} className='rounded-s-lg object-cover w-auto h-auto' width={0} height={0} sizes="100vw" />
             {/* width="0" height="0" sizes="100vw" className="w-full h-auto" */}
             <div className='flex-1 py-4 px-8 bg-white rounded-r-lg'>
                 <div className="space-y-6">
                     <div className="space-y-3">
                         <div className='flex justify-between items-center'>
-                            <h3 className='font-light text-xl text-primary-dark'>{title}</h3>
+                            <h3 className='font-light text-xl text-primary-dark'>{name}</h3>
                             <Button className='w-auto bg-transparent'>
                                 <TrashIcon />
                             </Button>
@@ -42,7 +37,7 @@ export const CartItem: React.FC<ProductItemProps> = ({ id, title, description, i
                             />
                         </div>
                         <span className='font-semibold text-base text-primary-black'>
-                            R$ {price}
+                            {formatToReais(price_in_cents)}
                         </span>
                     </div>
                 </div>

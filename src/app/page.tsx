@@ -1,9 +1,10 @@
-import { getProducts } from "@/actions/get-products";
+import { getProducts } from "@/actions/products";
 import { FilterArea } from "@/components/Home/FilterArea";
 import { Paginator } from "@/components/Home/Paginator";
 import { ProductList } from "@/components/ProductList";
 
 export default async function Home() {
+
   const products = await getProducts();
 
   return (
