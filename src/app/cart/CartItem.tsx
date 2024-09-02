@@ -1,23 +1,31 @@
 import { TrashIcon } from "@/assets/icons/TrashIcon";
 import { Button } from "@/components/Buttons/Button";
-import { Product } from "@/types/product-types";
-import { formatCurrency } from "@/utils/formaterCurrency";
+import { formatCurrency, TypeCurrency } from "@/utils/formaterCurrency";
 import Image from "next/image";
 import React from "react";
 
-
-export const CartItem: React.FC<Product> = ({ id, name, description, image_url, price_in_cents }) => {
+interface CartItemProps {
+    "id": string;
+    "name": string;
+    "category": string;
+    "description": string;
+    "price_in_cents": number;
+    "sales": number;
+    "image_url": string;
+    "created_at": string;
+    onDelete: (productId: string) => void;
+}
+export const CartItem: React.FC<CartItemProps> = ({ id, name, description, image_url, price_in_cents, onDelete }) => {
 
     return (
-        <article className="flex rounded-lg max-h-56">
-            <Image src={image_url} alt={`Imagem de ${name}`} className='rounded-s-lg object-cover w-auto h-auto' width={0} height={0} sizes="100vw" />
-            {/* width="0" height="0" sizes="100vw" className="w-full h-auto" */}
+        <article className="flex rounded-lg lg:max-h-56 w-full">
+            <Image src={image_url} alt={`Imagem de ${name}`} className='rounded-s-lg object-cover w-1/3 h-auto' width={0} height={0} sizes="100vw" />
             <div className='flex-1 py-4 px-8 bg-white rounded-r-lg'>
                 <div className="space-y-6">
                     <div className="space-y-3">
                         <div className='flex justify-between items-center'>
-                            <h3 className='font-light text-xl text-primary-dark'>{name}</h3>
-                            <Button className='w-auto bg-transparent'>
+                            <h3 className='font-light text-base lg:text-xl text-primary-dark'>{name}</h3>
+                            <Button onClick={() => onDelete(id)} className='w-auto bg-transparent'>
                                 <TrashIcon />
                             </Button>
                         </div>
@@ -36,8 +44,8 @@ export const CartItem: React.FC<Product> = ({ id, name, description, image_url, 
                                 style={{ MozAppearance: 'textfield' }}
                             />
                         </div>
-                        <span className='font-semibold text-base text-primary-black'>
-                            {formatCurrency(price_in_cents)}
+                        <span className='font-semibold text-sm lg:text-base text-primary-black'>
+                            {formatCurrency(price_in_cents, TypeCurrency.AOA)}
                         </span>
                     </div>
                 </div>

@@ -7,6 +7,7 @@ type State = {
 
 type Action = {
     addToCart: (product: Product) => void;
+    deleteFromCart: (productId: string) => void;
     loadCart: () => void;
 }
 
@@ -20,6 +21,13 @@ export const useCartStore = create<State & Action>((set) => ({
     addToCart: (product: Product) => {
         set((state) => {
             const updatedCart = [...state.cart, product];
+            window.localStorage.setItem('cart', JSON.stringify(updatedCart));
+            return { cart: updatedCart };
+        });
+    },
+    deleteFromCart: (productId: string) => {
+        set((state) => {
+            const updatedCart = state.cart.filter((cartItem) => cartItem.id!== productId);
             window.localStorage.setItem('cart', JSON.stringify(updatedCart));
             return { cart: updatedCart };
         });

@@ -3,20 +3,22 @@ import { Button } from "../Buttons/Button"
 import { Divider } from "../Diveder"
 import { ResumeItem } from "./ResumeItem"
 
-type Props = {}
+type Props = {
+    total: number
+}
 
-export const Resume = (props: Props) => {
+export const Resume = ({ total }: Props) => {
     return (
-        <aside className="bg-white min-w-[352px] max-h-[700px] rounded-lg py-4 px-6">
-            <div className="space-y-80">
+        <aside className="bg-white min-w-full lg:min-w-[352px] lg:max-h-[700px] rounded-lg py-4 px-6">
+            <div className="space-y-32 lg:space-y-80">
                 <div className="space-y-7">
                     <h3 className="font-semibold text-xl text-primary-dark uppercase">Resumo</h3>
                     <div className="space-y-10">
                         <div className="space-y-3">
-                            <ResumeItem fieldName="Subtotal" value={161.00} />
-                            <ResumeItem fieldName="Entrega" value={40.00} />
+                            <ResumeItem fieldName="Subtotal" value={total} />
+                            <ResumeItem fieldName="Entrega" value={total * 0.1} />
                             <Divider className="border-gray-200" />
-                            <ResumeItem bold={true} fieldName="Total" value={201.00} />
+                            <ResumeItem bold={true} fieldName="Total" value={total + total * 0.1} />
                         </div>
                         <Button className="bg-[#51B853] text-white uppercase">
                             Finalizar a Compra
