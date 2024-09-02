@@ -1,4 +1,4 @@
-import { getProducts } from "@/actions/products";
+import { getProducts } from "@/actions/productActions";
 import { ButtonGoBack } from "@/components/Buttons/ButtonGoBack";
 import { Resume } from "@/components/Cart/Resume";
 import { Product } from "@/types/product";

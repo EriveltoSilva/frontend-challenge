@@ -10,7 +10,7 @@ type Action = {
     getProducts: () => Product[],
 }
 
-const useProductStore = create<State & Action>((set, get) => ({
+export const useProductStore = create<State & Action>((set, get) => ({
     products:[],
     updateProducts: (products) => set(() => ({ products: products })),
     getProducts: () => get().products,

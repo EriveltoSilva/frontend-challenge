@@ -1,6 +1,7 @@
 import { FilterType } from "@/types/filter-types";
 import axios from "axios";
 import { API_URL } from "@/constants/api";
+import { Product } from "@/types/product";
 
 
 const makeQuery = (filterType:FilterType):string =>{
@@ -40,7 +41,7 @@ export const getProducts = async () => {
     }
 }
 
-export const getFilteredProducts = async (filterType: FilterType) => {
+export const getFilteredProducts = async (filterType: FilterType):Promise<Product[]> => {
     try {
         const data = await axios.post(API_URL, { query: makeQuery(filterType) } );
         return data?.data?.data?.allProducts;

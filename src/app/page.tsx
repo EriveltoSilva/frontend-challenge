@@ -1,16 +1,25 @@
-import { getProducts } from "@/actions/products";
-import { FilterArea } from "@/components/Home/FilterArea";
+import { getFilteredProducts } from "@/actions/productActions";
+import { FilterBar } from "@/components/Home/FilterBar";
 import { Paginator } from "@/components/Home/Paginator";
 import { ProductList } from "@/components/ProductList";
+import { FilterType } from "@/types/filter-types";
 
-export default async function Home() {
+interface HomeProps {
+  searchParams: {
+    filter: FilterType;
+  }
+}
 
-  const products = await getProducts();
+export default async function Home({ searchParams }: HomeProps) {
+  const filterType = searchParams.filter || FilterType.ALL;
+
+  // Obtém os produtos de acordo com o filtro escolhido
+  const products = await getFilteredProducts(filterType);
 
   return (
     <main className="px-40 py-8">
       <div className="space-y-6 w-full">
-        <FilterArea />
+        <FilterBar currentFilter={filterType} />
         <Paginator currentPage={1} totalPages={6} />
 
         <div className="space-y-44">
