@@ -4,7 +4,7 @@ import { ShoppingIcon } from "@/assets/icons/ShoppingIcon";
 import { SearchInput } from "@/components/Input/SearchInput";
 import { useCartStore } from "@/stores/cartStores";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useDeferredValue, useEffect, useState } from "react";
 
 type Props = {}
@@ -16,15 +16,16 @@ export const HeaderSearchCartBar = (props: Props) => {
     const deferredQueryText = useDeferredValue<string>(queryText);
 
     const router = useRouter();
+    const pathname = usePathname(); // Obtenha o caminho atual
+
 
     useEffect(() => {
-        // Atualiza a URL com o texto de pesquisa
         if (deferredQueryText) {
+            // Depois de 2 segundos, limpa o texto de pesquisa e navega para a página de resultados
+            setTimeout(() => { setQueryText(""); }, 2000);
             router.push(`/?search=${deferredQueryText}`, { scroll: false });
-        } else {
-            router.push(`/`, { scroll: false }); // Volta para a lista completa se não houver texto de pesquisa
         }
-    }, [deferredQueryText]);
+    }, [deferredQueryText, pathname]);
 
     useEffect(() => {
         loadCart();
