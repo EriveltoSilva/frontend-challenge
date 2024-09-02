@@ -1,8 +1,9 @@
 import { TrashIcon } from "@/assets/icons/TrashIcon";
 import { Button } from "@/components/Buttons/Button";
+import { useCartStore } from "@/stores/cartStores";
 import { formatCurrency, TypeCurrency } from "@/utils/formaterCurrency";
 import Image from "next/image";
-import React from "react";
+import React, { useDeferredValue, useEffect, useState } from "react";
 
 interface CartItemProps {
     "id": string;
@@ -13,9 +14,20 @@ interface CartItemProps {
     "sales": number;
     "image_url": string;
     "created_at": string;
+    quantity?: number;
     onDelete: (productId: string) => void;
 }
-export const CartItem: React.FC<CartItemProps> = ({ id, name, description, image_url, price_in_cents, onDelete }) => {
+export const CartItem: React.FC<CartItemProps> = ({ id, name, description, quantity, image_url, price_in_cents, onDelete }) => {
+    const { updateQuantity, loadCart } = useCartStore();
+    const [quantityChanged, setQuantityChanged] = useState<number>(quantity || 1);
+    const quantityDeferred = useDeferredValue<number>(quantityChanged);
+
+    useEffect(() => {
+        if (quantityDeferred > 0) {
+            updateQuantity(id, quantityDeferred);
+            loadCart();
+        }
+    }, [quantityDeferred]);
 
     return (
         <article className="flex rounded-lg lg:max-h-56 w-full">
@@ -41,6 +53,8 @@ export const CartItem: React.FC<CartItemProps> = ({ id, name, description, image
                                 className='w-12 bg-transparent text-primary outline-none text-center border-none custom-number-input'
                                 placeholder="1"
                                 min="1"
+                                value={quantityDeferred}
+                                onChange={(e) => setQuantityChanged(Number(e.target.value))}
                                 style={{ MozAppearance: 'textfield' }}
                             />
                         </div>

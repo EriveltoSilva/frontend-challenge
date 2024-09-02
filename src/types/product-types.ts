@@ -7,4 +7,5 @@ export interface Product {
     "sales": number;
     "image_url": string;
     "created_at": string;
+    quantity?: number;
 }

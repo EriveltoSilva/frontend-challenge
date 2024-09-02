@@ -11,7 +11,11 @@ import { CartItem } from "./CartItem";
 export default function Cart({ }) {
     const { cart, deleteFromCart } = useCartStore();
 
-    const getTotal = () => cart.reduce((total, item) => (total + item.price_in_cents), 0)
+    const getTotal = () => cart.reduce((total, item) => {
+        if (item.quantity !== undefined)
+            return (total + item.price_in_cents * item.quantity);
+        return total + item.price_in_cents;
+    }, 0);
 
     return (
         <main className="lg:px-40 lg:py-8 px-6 py-3">
@@ -44,6 +48,7 @@ export default function Cart({ }) {
                                         category={cartProduct.category}
                                         created_at={cartProduct.created_at}
                                         onDelete={deleteFromCart}
+                                        quantity={cartProduct.quantity}
                                     />
                                 );
                             })
