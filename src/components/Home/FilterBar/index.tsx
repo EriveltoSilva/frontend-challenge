@@ -3,6 +3,7 @@
 import { Dropdown } from "@/components/Buttons/Dropdown";
 import { FilterType } from "@/types/filter-types";
 import { PriorityType } from "@/types/priority-types";
+import { filterMatcher } from "@/utils/functions";
 import { useRouter } from "next/navigation";
 import { FilterItem } from "./FilterItem";
 
@@ -10,21 +11,6 @@ import { FilterItem } from "./FilterItem";
 interface FilterAreaProps {
     currentFilter: FilterType;
     currentPriority: PriorityType;
-}
-
-const matcher = (text: string): PriorityType => {
-    switch (text) {
-        case 'Novidades':
-            return PriorityType.NEWEST;
-        case 'Preço Maior - menor':
-            return PriorityType.PRICE_HIGH_TO_LOW;
-        case 'Preço Menor - maior':
-            return PriorityType.PRICE_LOW_TO_HIGH;
-        case 'Mais vendidos':
-            return PriorityType.MOST_SOLD;
-        default:
-            return PriorityType.NEWEST;
-    }
 }
 
 
@@ -37,7 +23,7 @@ export const FilterBar = ({ currentFilter, currentPriority }: FilterAreaProps) =
     }
 
     const handleDropdownSelection = (selection: string) => {
-        const selectedPriority = matcher(selection);
+        const selectedPriority = filterMatcher(selection);
         router.push(`/?filter=${currentFilter}&priority=${selectedPriority}`, { scroll: false });
     }
 
