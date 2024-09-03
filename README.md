@@ -1,62 +1,154 @@
-![image](https://user-images.githubusercontent.com/40845824/121069742-3accdb00-c7a4-11eb-87d0-3dc47e433762.png)
+[TYPESCRIPT__BADGE]: https://img.shields.io/badge/typescript-D4FAFF?style=for-the-badge&logo=typescript
+[TailwindCSS_BADGE]: https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white
+[NEXT_BADGE]: https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white
+[PROJECT__BADGE]: https://img.shields.io/badge/📱Visit_this_project-000?style=for-the-badge&logo=project
+[PROJECT__URL]: https://portfolio-1f6u.vercel.app/
+[VERCEL_BADGE]: https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white
 
 
-# 🚀 Front end challenge - Capputeeno
+<h1 align="center" style="font-weight: bold;">frontend challenge Capputeeno  💻</h1>
 
-Bem-vindo(a). Este é o desafio Front end!
 
-O objetivo deste desafio é avaliar suas habilidades de programação.
-Quando sua solução estiver pronta, basta responder o e-mail que recebeu com o link do seu repo aqui no Github!
-Em seguida, enviaremos o feedback e as instruções dos próximos passos!
-
-Caso tenha alguma dúvida, nós estamos disponíveis no email *recrutamento@rocketseat.com.br*
-Bom desafio!
-
-> ⚠️ **É importante que o seu repo esteja público, caso contrário não iremos conseguir avaliar sua resposta**
-
-# 🧠 Contexto
+Welcome! This repository contains my solution for [Rocketseat´s](https://www.rocketseat.com.br/ignite?utm_source=influencer&utm_medium=publipost&utm_campaign=lead&utm_term=ignite&utm_content=lead-ignite-publipost-organic-cupom_KIPPERDEV-none-none-none-none-redes_kipperdev&referral=kipperdev&coupon=KIPPERDEV@IGNITE) open source [Frontend Challenge](https://github.com/Rocketseat/frontend-challenge).
 
 ![Protótipo](https://storage.googleapis.com/xesque-dev/challenge-images/prototipo.png?42)
 
-O desafio será implementar um e-commerce para venda de canecas e camisetas que deverá ter as seguintes funcionalidades:
-- [ ] Catálogo de produtos com paginação
-- [ ] Filtragem produtos por categoria
-- [ ] Busca por nome do produto
-- [ ] Adicionar e remover produtos do carrinho
-- [ ] Finalizar compra
 
-## 📋 Instruções
+![next][NEXT_BADGE]
+![typescript][TYPESCRIPT__BADGE]
+![TailwindCss][TailwindCSS_BADGE]
+<!-- ![Vercel][VERCEL_BADGE] -->
 
-Chegou a hora de colocar a mão na massa!
 
-- Siga [esse protótipo](https://www.figma.com/file/rET9F2CeUEJdiVN7JRu993/E-commerce---capputeeno?node-id=680%3A6449)
-- Utilize Next.js e Typescript
-- Faça a estilização com styled-components
-- Utilize o local storage para gerenciar o carrinho
-- Por favor, inclua no README as instruções de instalação do projeto
-- Sinta-se livre para incluir quaisquer observações
-- Consuma nossa **API GraphQL** rodando o comando `yarn start` na pasta `api`
+`Content:`
+<p align="center">
+ <a href="#about">About</a>  • 
+ <a href="#requirements">Challenges Requirements</a>  • 
+ <a href="#utilLinks">Utils Links</a>  • 
+ <a href="#installation">Installation</a>  • 
+ <a href="#prerequisites">Prerequisites</a> • 
+ <a href="#run-backend">Running the API (Backend)</a> • 
+ <a href="#run-frontend">Running Frontend</a> • 
+ <a href="#results">Results</a> • 
+ <a href="#collaborators">Collaborators</a> • 
+ <a href="#license">License</a> • 
+</p>
 
-## ✔️ Critérios de Avaliação
+<h2 id="about">🧠 About</h2>
 
-Além dos requisitos levantados acima, iremos olhar para os seguintes critérios durante a correção do desafio:
+<p>
+The goal with this project is to train my Frontend skills with NextJs , specifically server components and it's iterations, learning new ways of solving technical challenges learning how to consume graphQL API.
+</p>
 
-- Gerenciamento de estado
-- Componentização
-- Responsividade
-- Preocupação com usabilidade
-- Preocupação com acessibilidade
-- Testes e2e
-- Padrões de código
-- Padrão de commits (_Conventional_)
+<p>
+The challenge is to implement an e-commerce for the sale of mugs and t-shirts that should have the following functionalities:
+</p>
 
-## 😎 Seria legal
-- Fazer deploy na vercel ou em outro local de sua preferência e disponibilizar um link de visualização, se necessário utilize esse servidor para a API GraphQL:  https://rocketseat-frontend-challenge.herokuapp.com/
-- Testes unitários
-- Utilização de cache do Next.js
+- [x] Product catalog with pagination
+- [x] Filter products by category
+- [x] Search by product name
+- [x] Add and remove products from cart
+- [ ] Checkout
 
----
+<h2 id="requirements">📋 Challenges Requirements</h2>
 
-_O desafio acima foi cuidadosamente construído para propósitos de avaliação apenas. Já possuimos uma funcionalidade similar na nossa plataforma._
 
-Made with 💜 at Rocketseat
+- Follow [this prototype](https://www.figma.com/file/rET9F2CeUEJdiVN7JRu993/E-commerce---capputeeno?node-id=680%3A6449)
+- Use Next.js and Typescript
+- Create components with styled-components (I made it with TailwindCss)
+- consume from the provided **GraphQL API**
+
+
+<h2 id="utilLinks">🖥️ Utils Links</h2>
+
+1. <a href="https://www.figma.com/file/rET9F2CeUEJdiVN7JRu993/E-commerce---capputeeno?node-id=680%3A6449">Challenge Figma</a>
+2. <a href="https://github.com/Rocketseat/frontend-challenge">Project Original Challenge</a>
+
+
+<h2 id="installation">🖥️ Installation</h2>
+
+This section describes how to run the project locally.
+
+<h3 id="prerequisites">Pre-requisites</h3>
+
+Here you list all prerequisites necessary for running your project. For example:
+
+- NodeJS
+- npm
+- TypeScript
+- Git 
+
+
+<h3 id="run-backend"> Running the API (Backend)</h3>
+
+1. Clone this repo
+```bash
+git clone https://github.com/EriveltoSilva/frontend-challenge.git
+```
+
+2. Go to the API folder
+```bash
+cd frontend-challenge
+cd api
+```
+
+3. Install dependencies
+```bash
+npm install
+```
+
+3. Run start
+```bash
+npm start
+```
+
+<h3 id="run-frontend">Running Frontend</h3>
+
+1. Clone this repo
+```bash
+git clone https://github.com/EriveltoSilva/frontend-challenge.git
+```
+
+2. Go to the project folder
+```bash
+cd frontend-challenge
+```
+
+3. Install dependencies
+```bash
+npm install
+```
+
+3. Run Frontend
+```bash
+npm run dev
+```
+
+<h2 id="results">📌 Results</h2>
+
+<p align="center">
+    <img src="./docs/imgs/product-detail-page.png" alt="Product Detail Page" width="45%">
+    <img src="./docs/imgs/ordering-page.png" alt="Ordering list" width="45%">
+    <img src="./docs/imgs/cart-page.png" alt="Cart page" width="100%">
+</p>
+
+<h2 id="collaborators">🤝 Collaborators</h2>
+
+Special thank you for all people that contributed for this project.
+
+<table>
+  <tr>
+    <td align="center">
+      <a href="#">
+        <img src="https://avatars.githubusercontent.com/u/125351173?s=400&u=d6b335b5e253bb45f3ed82ec322684ab203b5243&v=4" width="100px;" alt="Erivelto Silva Profile Picture"/><br>
+        <sub>
+          <b>Erivelto Silva</b>
+        </sub>
+      </a>
+    </td>
+  </tr>
+</table>
+
+<h2 id="license">License</h2>
+
+This project is licensed under the <a href="./LICENSE">MIT License</a>. See the LICENSE file for more information.
