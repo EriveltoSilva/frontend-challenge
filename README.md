@@ -6,7 +6,7 @@
 [VERCEL_BADGE]: https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white
 
 
-<h1 align="center" style="font-weight: bold;">frontend challenge Capputeeno  💻</h1>
+<h1 align="center" style="font-weight: bold;">frontend challenge - Capputeeno  💻</h1>
 
 
 Welcome! This repository contains my solution for [Rocketseat´s](https://www.rocketseat.com.br/ignite?utm_source=influencer&utm_medium=publipost&utm_campaign=lead&utm_term=ignite&utm_content=lead-ignite-publipost-organic-cupom_KIPPERDEV-none-none-none-none-redes_kipperdev&referral=kipperdev&coupon=KIPPERDEV@IGNITE) open source [Frontend Challenge](https://github.com/Rocketseat/frontend-challenge).
@@ -37,7 +37,7 @@ Welcome! This repository contains my solution for [Rocketseat´s](https://www.ro
 <h2 id="about">🧠 About</h2>
 
 <p>
-The goal of this project is to enhance my frontend development skills using Next.js, with a focus on server components and their iterations. This project provides an opportunity to explore new approaches to solving technical challenges, particularly in consuming GraphQL APIs.
+The goal of this project is to enhance my frontend development skills using Next.js, tailwindCss and TypeScript, with a focus on server components and their iterations. This project provides an opportunity to explore new approaches to solving technical challenges, particularly in consuming GraphQL APIs.
 </p>
 
 <p>
