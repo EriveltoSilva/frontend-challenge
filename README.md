@@ -37,11 +37,11 @@ Welcome! This repository contains my solution for [Rocketseat´s](https://www.ro
 <h2 id="about">🧠 About</h2>
 
 <p>
-The goal with this project is to train my Frontend skills with NextJs , specifically server components and it's iterations, learning new ways of solving technical challenges learning how to consume graphQL API.
+The goal of this project is to enhance my frontend development skills using Next.js, with a focus on server components and their iterations. This project provides an opportunity to explore new approaches to solving technical challenges, particularly in consuming GraphQL APIs.
 </p>
 
 <p>
-The challenge is to implement an e-commerce for the sale of mugs and t-shirts that should have the following functionalities:
+The challenge is to implement an e-commerce platform for selling mugs and t-shirts, featuring the following functionalities:
 </p>
 
 - [x] Product catalog with pagination
@@ -59,7 +59,7 @@ The challenge is to implement an e-commerce for the sale of mugs and t-shirts th
 - consume from the provided **GraphQL API**
 
 
-<h2 id="utilLinks">🖥️ Utils Links</h2>
+<h2 id="utilLinks">🔗 Utils Links</h2>
 
 1. <a href="https://www.figma.com/file/rET9F2CeUEJdiVN7JRu993/E-commerce---capputeeno?node-id=680%3A6449">Challenge Figma</a>
 2. <a href="https://github.com/Rocketseat/frontend-challenge">Project Original Challenge</a>
@@ -149,6 +149,6 @@ Special thank you for all people that contributed for this project.
   </tr>
 </table>
 
-<h2 id="license">License</h2>
+<h2 id="license">📓 License</h2>
 
 This project is licensed under the <a href="./LICENSE">MIT License</a>. See the LICENSE file for more information.
