@@ -7,23 +7,11 @@ import { makeQuery } from "@/utils/actions/functions";
 import { PER_PAGE } from "@/constants/constants";
 
 
-export const getFilteredProducts = async (filterType: FilterType, priority:PriorityType, search:string, page:number):Promise<Product[]> => {
-    try {
-        const data = await axios.post(API_URL, { query: makeQuery(filterType, priority,page) } );
-        if (search)
-            return data?.data.data.allProducts.filter((product:Product) => product.name.toLowerCase().includes(search.toLowerCase()));
-        return data?.data?.data?.allProducts;
-    } catch (error) {
-        throw error;
-    }
-}
-
-
 interface GetFilteredProductsResponse {
     products: Product[];
     totalPages: number;
 }
-export const getFilteredProducts2 = async (filterType: FilterType, priority:PriorityType, search:string, page:number):Promise<GetFilteredProductsResponse> => {
+export const getFilteredProducts = async (filterType: FilterType, priority:PriorityType, search:string, page:number):Promise<GetFilteredProductsResponse> => {
     try {
         const response = await axios.post(API_URL, { query: makeQuery(filterType, priority,page) });
         const data = response?.data?.data;
