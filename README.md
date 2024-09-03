@@ -83,7 +83,7 @@ Here you list all prerequisites necessary for running your project. For example:
 
 1. Clone this repo
 ```bash
-git clone https://github.com/EriveltoSilva/frontend-challenge.git
+git clone https://github.com/EriveltoSilva/frontend-challenge-ecommerce.git
 ```
 
 2. Go to the API folder
@@ -106,7 +106,7 @@ npm start
 
 1. Clone this repo
 ```bash
-git clone https://github.com/EriveltoSilva/frontend-challenge.git
+git clone https://github.com/EriveltoSilva/frontend-challenge-ecommerce.git
 ```
 
 2. Go to the project folder
