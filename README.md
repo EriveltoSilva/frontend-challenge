@@ -102,6 +102,31 @@ npm install
 npm start
 ```
 
+4. Opening GraphiQL in Web Browser with url (optional):
+```
+http://localhost:3333/
+```
+
+5. You can see all api products typing in GraphiQL (optional):
+```
+query{
+  allProducts{
+    id
+    name
+    description
+    price_in_cents
+    image_url
+    sales
+    created_at
+    category
+  }
+  _allProductsMeta {
+    count
+  }
+}
+```
+
+
 <h3 id="run-frontend">Running Frontend</h3>
 
 1. Clone this repo
@@ -119,7 +144,12 @@ cd frontend-challenge
 npm install
 ```
 
-3. Run Frontend
+4. Copy .env.example to .env.local file
+```bash
+cp .env.example .env.local
+```
+
+5. Run Frontend
 ```bash
 npm run dev
 ```
